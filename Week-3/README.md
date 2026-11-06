@@ -124,9 +124,9 @@ Get-Service Sysmon64
 
 My first attempt failed with "You need to launch Sysmon as an Administrator", because the window was not elevated. After I reopened PowerShell as Administrator the install worked, and I confirmed that events were arriving in Event Viewer under `Applications and Services Logs > Microsoft > Windows > Sysmon > Operational`.
 
-![Sysmon install](Findings/sysmon-install-output.png)
+![Sysmon install](Findings/Sysmon%20Events/sysmon-install-output.png)
 
-![Sysmon operational log](Findings/sysmon-operational-log.png)
+![Sysmon operational log](Findings/Sysmon%20Events/sysmon-operational-log.png)
 
 ### Making events and finding them
 
