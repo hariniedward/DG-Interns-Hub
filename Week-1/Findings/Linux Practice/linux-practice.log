@@ -1,0 +1,115 @@
+Script started on 2026-10-22 12:23:57+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ sudo -v
+[?2004l[sudo: authenticate] Password: ******      
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [7mclear; whoami; hostname; pwd; uname -r; uptime; df -h; free -h[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear; whoami; hostname; pwd; uname -r; uptime; df -h; free -h
+[?2004l[H[2J[3Jubuntu
+ubuntu-lab
+/home/ubuntu
+7.0.0-38-generic
+ 12:24:58 up 12 min,  2 users,  load average: 0.00, 0.11, 0.11
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              329M  1.1M  328M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  8.1G  4.6G  3.1G  60% /
+tmpfs                              822M     0  822M   0% /dev/shm
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                              822M     0  822M   0% /tmp
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/sda2                          1.7G  192M  1.4G  12% /boot
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none                               1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                              165M  8.0K  165M   1% /run/user/1000
+               total        used        free      shared  buff/cache   available
+Mem:           1.6Gi       382Mi       1.0Gi       1.1Mi       393Mi       1.2Gi
+Swap:          1.2Gi          0B       1.2Gi
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [7mclear[27m
+[7msudo adduser --disabled-password --gecos "" alice[27m
+[7msudo adduser --disabled-password --gecos "" bob[27m
+[7msudo adduser --disabled-password --gecos "" carol[27m
+[7msudo groupadd developers[27m
+[7msudo groupadd analysts[27m
+[7msudo usermod -aG developers alice[27m
+[7msudo usermod -aG developers bob[27m
+[7msudo usermod -aG analysts carol[27m
+[7mid alice[27m
+[7mgetent group developers[27m[A[A[A[A[A[A[A[A[A[Aclear
+sudo adduser --disabled-password --gecos "" alice
+sudo adduser --disabled-password --gecos "" bob
+sudo adduser --disabled-password --gecos "" carol
+sudo groupadd developers
+sudo groupadd analysts
+sudo usermod -aG developers alice
+sudo usermod -aG developers bob
+sudo usermod -aG analysts carol
+id alice
+getent group developers
+[?2004l[H[2J[3Jusermod: no changes
+usermod: no changes
+usermod: no changes
+uid=1001(alice) gid=1001(alice) groups=1001(alice),100(users),1004(developers)
+developers:x:1004:alice,bob
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [K]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [K]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ getent group developers[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pid alice[K[K[K[K[K[K[K[K[7mclear[27m
+[7msudo mkdir /srv/shared[27m
+[7msudo chown root:developers /srv/shared[27m
+[7msudo chmod 2770 /srv/shared[27m
+[7mls -ld /srv/shared[27m
+[7msudo -u alice touch /srv/shared/alice-note.txt[27m
+[7msudo -u carol touch /srv/shared/test.txt[27m[A[A[A[A[A[Aclear
+sudo mkdir /srv/shared
+sudo chown root:developers /srv/shared
+sudo chmod 2770 /srv/shared
+ls -ld /srv/shared
+sudo -u alice touch /srv/shared/alice-note.txt
+sudo -u carol touch /srv/shared/test.txt
+[?2004l[H[2J[3Jdrwxrws--- 2 root developers 4096 Oct 22 12:29 [0m[01;34m/srv/shared[0m
+touch: setting times of '/srv/shared/test.txt': Permission denied
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [7mclear[27m
+[7mfind /etc -name "*.conf" -type f 2>/dev/null | head -5[27m
+[7mgrep "ubuntu" /etc/passwd[27m
+[7mps aux | head -5[27m
+[7msudo ss -tulpn[27m[A[A[A[A]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ clear
+find /etc -name "*.conf" -type f 2>/dev/null | head -5
+grep "ubuntu" /etc/passwd
+ps aux | head -5
+sudo ss -tulpn
+[?2004l[H[2J[3J/etc/overlayroot.conf
+/etc/ucf.conf
+/etc/udisks2/udisks2.conf
+/etc/apt/apt.conf.d/20snapd.conf
+/etc/apt/apt.conf.d/20apt-esm-hook.conf
+[01;31m[Kubuntu[m[K:x:1000:1000:[01;31m[Kubuntu[m[K:/home/[01;31m[Kubuntu[m[K:/bin/bash
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.4  1.0  25452 16912 ?        Ss   12:12   0:04 /usr/lib/systemd/systemd --switched-root --system --deserialize=47
+root           2  0.0  0.0      0     0 ?        S    12:12   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    12:12   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   12:12   0:00 [kworker/R-rcu_gp]
+Netid   State    Recv-Q   Send-Q             Local Address:Port      Peer Address:Port   Process                                                    
+udp     UNCONN   0        0                     127.0.0.54:53             0.0.0.0:*       users:(("systemd-resolve",pid=566,fd=18))                 
+udp     UNCONN   0        0                  127.0.0.53%lo:53             0.0.0.0:*       users:(("systemd-resolve",pid=566,fd=16))                 
+udp     UNCONN   0        0          192.168.56.102%enp0s8:68             0.0.0.0:*       users:(("systemd-network",pid=810,fd=39))                 
+udp     UNCONN   0        0               10.0.2.15%enp0s3:68             0.0.0.0:*       users:(("systemd-network",pid=810,fd=37))                 
+udp     UNCONN   0        0                      127.0.0.1:323            0.0.0.0:*       users:(("chronyd",pid=1023,fd=4))                         
+udp     UNCONN   0        0                          [::1]:323               [::]:*       users:(("chronyd",pid=1023,fd=5))                         
+tcp     LISTEN   0        4096                     0.0.0.0:22             0.0.0.0:*       users:(("sshd",pid=1764,fd=3),("systemd",pid=1,fd=105))   
+tcp     LISTEN   0        4096               127.0.0.53%lo:53             0.0.0.0:*       users:(("systemd-resolve",pid=566,fd=17))                 
+tcp     LISTEN   0        4096                  127.0.0.54:53             0.0.0.0:*       users:(("systemd-resolve",pid=566,fd=19))                 
+tcp     LISTEN   0        4096                        [::]:22                [::]:*       users:(("sshd",pid=1764,fd=4),("systemd",pid=1,fd=106))   
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [7mclear[27m
+[7m(crontab -l 2>/dev/null; echo "* * * * * date >> /home/ubuntu/cron-test.log") | crontab -[27m
+[7mcrontab -l[27m[A[A]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ clear
+(crontab -l 2>/dev/null; echo "* * * * * date >> /home/ubuntu/cron-test.log") | crontab -
+crontab -l
+[?2004l[H[2J[3J* * * * * date >> /home/ubuntu/cron-test.log
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ [7mcat /home/ubuntu/cron-test.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /home/ubuntu/cron-test.log
+[?2004lThu Oct 22 12:35:01 PM UTC 2026
+Thu Oct 22 12:36:01 PM UTC 2026
+Thu Oct 22 12:37:01 PM UTC 2026
+Thu Oct 22 12:38:01 PM UTC 2026
+Thu Oct 22 12:39:01 PM UTC 2026
+Thu Oct 22 12:40:01 PM UTC 2026
+Thu Oct 22 12:41:01 PM UTC 2026
+Thu Oct 22 12:42:01 PM UTC 2026
+[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ crontab -r
+[?2004l[?2004h]0;ubuntu@ubuntu-lab: ~[01;32mubuntu@ubuntu-lab[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2026-10-22 12:46:03+00:00 [COMMAND_EXIT_CODE="0"]

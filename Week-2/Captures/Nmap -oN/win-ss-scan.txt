@@ -1,0 +1,8 @@
+﻿# Nmap 7.991 scan initiated Tue Oct 27 10:26:38 2026 as: /usr/lib/nmap/nmap -sS -oN win-ss-scan.txt -oX win-ss-scan.xml 192.168.56.1
+Nmap scan report for 192.168.56.1
+Host is up (0.00043s latency).
+All 1000 scanned ports on 192.168.56.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: XX:XX:XX:XX:XX:XX (Unknown)
+
+# Nmap done at Tue Oct 27 10:27:02 2026 -- 1 IP address (1 host up) scanned in 23.94 seconds
