@@ -236,7 +236,7 @@ sudo make install && sudo ldconfig
 snort -V
 ```
 
-![snort -V](Findings/Snort/snort-version.png)
+![snort -V](Findings/snort/snort-version.png)
 
 ### Configuration and starter rules
 
@@ -259,13 +259,13 @@ sudo snort -c /usr/local/etc/snort/snort.lua -R /usr/local/etc/snort/rules/local
 
 My own Windows SSH session to the VM raised constant SSH alerts from `192.168.56.1`, so I later filtered that address out with grep to keep the screen readable.
 
-![Configuration and rules](Findings/Snort/snort-config-rules.png)
+![Configuration and rules](Findings/snort/snort-config-rules.png)
 
-![Configuration test](Findings/Snort/snort-config-test.png)
+![Configuration test](Findings/snort/snort-config-test.png)
 
-![Kali test commands](Findings/Snort/kali-test-commands.png)
+![Kali test commands](Findings/snort/kali-test-commands.png)
 
-![Starter rule alerts](Findings/Snort/snort-alerts-starter.png)
+![Starter rule alerts](Findings/snort/snort-alerts-starter.png)
 
 ### The T1046 rule: detecting an Nmap SYN scan
 
@@ -292,13 +292,13 @@ sudo nmap -sS 192.168.56.102
 
 Nmap found ports 22 (ssh) and 80 (http) open, and Snort raised the T1046 alert for many ports within a fraction of a second. The Snort times are in UTC, and the scan ran at 11:08 IST, which is 05:38 UTC.
 
-![Rules with T1046](Findings/Snort/snort-rules-with-t1046.png)
+![Rules with T1046](Findings/snort/snort-rules-with-t1046.png)
 
-![Nmap scan from Kali](Findings/Snort/kali-nmap-scan.png)
+![Nmap scan from Kali](Findings/snort/kali-nmap-scan.png)
 
-![T1046 alerts, start](Findings/Snort/snort-alerts-t1046.png)
+![T1046 alerts, start](Findings/snort/snort-alerts-t1046.png)
 
-![T1046 alerts, end](Findings/Snort/snort-alerts-t1046-end.png)
+![T1046 alerts, end](Findings/snort/snort-alerts-t1046-end.png)
 
 ### Differences from the task sheet
 
