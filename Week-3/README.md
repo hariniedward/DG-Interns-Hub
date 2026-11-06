@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="assets/dg-interns-hub.png" alt="DG Interns Hub" width="130">
+<img src="../assets/dg-interns-hub.png" alt="DG Interns Hub" width="130">
 
 # Week 3: Linux Logs, Sysmon, auditd and Snort
 
 **DG Interns Hub | Cybersecurity Internship**
 
-<img src="assets/ubuntu.png" alt="Ubuntu" width="46"> &nbsp;
-<img src="assets/kali.png" alt="Kali Linux" width="46"> &nbsp;
-<img src="assets/snort.png" alt="Snort" width="46"> &nbsp;
-<img src="assets/linux.png" alt="Linux" width="46"> &nbsp;
-<img src="assets/virtualbox.png" alt="VirtualBox" width="46"> &nbsp;
-<img src="assets/tryhackme.png" alt="TryHackMe" width="46"> &nbsp;
-<img src="assets/github.png" alt="GitHub" width="46">
+<img src="../assets/ubuntu.png" alt="Ubuntu" width="46"> &nbsp;
+<img src="../assets/kali.png" alt="Kali Linux" width="46"> &nbsp;
+<img src="../assets/snort.png" alt="Snort" width="46"> &nbsp;
+<img src="../assets/linux.png" alt="Linux" width="46"> &nbsp;
+<img src="../assets/virtualbox.png" alt="VirtualBox" width="46"> &nbsp;
+<img src="../assets/tryhackme.png" alt="TryHackMe" width="46"> &nbsp;
+<img src="../assets/github.png" alt="GitHub" width="46">
 
 ![Sysmon](https://img.shields.io/badge/Sysmon-v15.22-111111?style=for-the-badge)
 ![auditd](https://img.shields.io/badge/auditd-4.1.2-555555?style=for-the-badge&logo=linux&logoColor=white)
@@ -77,7 +77,7 @@ This repository holds everything from the week: notes, writeups, screenshots, my
 
 ## Lab environment
 
-<img src="assets/virtualbox.png" alt="VirtualBox" width="36"> All the work was done in a small VirtualBox lab on my laptop. The three machines share a host-only network, `192.168.56.0/24`.
+<img src="../assets/virtualbox.png" alt="VirtualBox" width="36"> All the work was done in a small VirtualBox lab on my laptop. The three machines share a host-only network, `192.168.56.0/24`.
 
 | Machine | Role in the lab | Address | Tools |
 |---|---|---|---|
@@ -158,7 +158,7 @@ A separate document, [`sysmon-events-documentation.pdf`](Findings/Sysmon%20Event
 
 ## auditd on Ubuntu
 
-<img src="assets/ubuntu.png" alt="Ubuntu" width="36"> <img src="assets/linux.png" alt="Linux" width="36">
+<img src="../assets/ubuntu.png" alt="Ubuntu" width="36"> <img src="../assets/linux.png" alt="Linux" width="36">
 
 ### Setup
 
@@ -205,7 +205,7 @@ Screenshots and the field explanation are in [`Findings/auditd/`](Findings/audit
 
 ## Snort
 
-<img src="assets/snort.png" alt="Snort" width="36"> <img src="assets/kali.png" alt="Kali" width="36">
+<img src="../assets/snort.png" alt="Snort" width="36"> <img src="../assets/kali.png" alt="Kali" width="36">
 
 ### The problem: no Snort package
 
@@ -343,7 +343,7 @@ I built a cheat sheet with 19 entries that I can reuse when investigating. The f
 
 ## TryHackMe rooms and LetsDefend courses
 
-<img src="assets/tryhackme.png" alt="TryHackMe" width="36"> Each room and course has its own writeup in [`Writeups/`](Writeups).
+<img src="../assets/tryhackme.png" alt="TryHackMe" width="36"> Each room and course has its own writeup in [`Writeups/`](Writeups).
 
 ### TryHackMe
 
