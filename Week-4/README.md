@@ -202,7 +202,7 @@ File: `task7-cheat-sheets.pdf` in [`Cheat Sheet`](Cheat%20Sheet)
 | The Wazuh manager would not start | Kali's disk was full from large files in `/var/ossec/tmp`. I deleted them and switched vulnerability detection off in `ossec.conf` |
 | Rule 100010 did not fire in the first test | It waited on base rule 5716, but this Wazuh version matched my line as 5760. I changed the base rule, restarted the manager and tested again |
 | The Host-only addresses were lost after each VM restart | I added them again by hand after every restart |
-| Ubuntu-lab's disk was nearly full (about 92% used) | I installed the Wazuh manager on Kali instead, which had more free space |
+| Ubuntu-lab's disk was nearly full (about 92% used) | The install on Ubuntu-lab reported that storage was full, so I installed the Wazuh manager on Kali instead |
 
 ## 8. Safety and privacy
 
@@ -219,8 +219,8 @@ File: `task7-cheat-sheets.pdf` in [`Cheat Sheet`](Cheat%20Sheet)
 
 ## LinkedIn posts
 
+- Concept post: https://lnkd.in/p/ggvXav-i
 - Weekly post: https://lnkd.in/p/g3NHM9mp
-- Second post: https://lnkd.in/p/ggvXav-i
 
 ---
 
