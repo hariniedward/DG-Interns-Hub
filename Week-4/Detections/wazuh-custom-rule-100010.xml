@@ -1,0 +1,16 @@
+<!-- Custom Wazuh rule 100010: SSH brute force, MITRE T1110 -->
+<!-- Lives in /var/ossec/etc/rules/local_rules.xml on Kali-CLI -->
+<!-- Tested with wazuh-logtest, base rule 5760 -->
+<group name="local,syslog,sshd,">
+
+  <rule id="100010" level="10" frequency="5" timeframe="300">
+    <if_matched_sid>5760</if_matched_sid>
+    <same_source_ip />
+    <description>SSH brute force attempt: 5 failed logins from same source in 5 minutes</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+    <group>authentication_failures,</group>
+  </rule>
+
+</group>

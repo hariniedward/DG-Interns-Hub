@@ -1,0 +1,48 @@
+DG Interns Hub - Week 4 | Hands-On Task 5: Detections
+Name: Harini E | Intern ID: DG/15/OCT/CYBER/040
+SPL searches (run in the Splunk search bar, index=lab)
+
+1. Failed Logons per User (EventCode 4625) | MITRE T1110
+index=lab sourcetype="WinEventLog:Security" EventCode=4625
+| eval target_user=mvindex(Account_Name,-1)
+| stats count as failed_logons, latest(_time) as last_seen by target_user
+| eval last_seen=strftime(last_seen,"%Y-%m-%d %H:%M:%S")
+| sort - failed_logons
+
+2. PowerShell Process Creation (Sysmon Event ID 1) | MITRE T1059.001
+index=lab sourcetype=XmlWinEventLog EventCode=1
+Image="*WindowsPowerShell*powershell.exe"
+| table _time, ParentImage, CommandLine, User
+| sort - _time | head 10
+
+3. New User Account Creation (EventCode 4720) | MITRE T1136
+index=lab sourcetype="WinEventLog:Security" EventCode=4720
+| eval creator=mvindex(Account_Name,0), new_user=mvindex(Account_Name,1)
+| table _time, EventCode, new_user, creator
+| sort - _time
+
+4. SSH Failures per Source IP | MITRE T1110
+index=lab sourcetype=linux_secure "Failed password"
+| rex field=_raw "from (?<src_ip>[\d\.]+)"
+| stats count as failed_attempts, latest(_time) as last_seen by src_ip
+| eval last_seen=strftime(last_seen,"%Y-%m-%d %H:%M:%S")
+| sort - failed_attempts
+
+5. Rare Parent-Child Process Pairs | MITRE T1059 (anomaly-based)
+index=lab sourcetype=XmlWinEventLog EventCode=1
+NOT ParentImage="-" NOT Image="*AppData*"
+| stats count by ParentImage, Image
+| where count<=2
+| sort count | head 10
+
+Scheduled alert 1: Lab - Windows Failed Logons 4625 (T1110), every 15 minutes, severity Medium
+index=lab sourcetype="WinEventLog:Security" EventCode=4625
+| eval target_user=mvindex(Account_Name,-1)
+| stats count as failed_logons by target_user
+| where failed_logons>=3
+
+Scheduled alert 2: Lab - SSH Failed Logins per Source IP (T1110), every 15 minutes, severity High
+index=lab sourcetype=linux_secure "Failed password"
+| rex field=_raw "from (?<src_ip>[\d\.]+)"
+| stats count as failed_attempts by src_ip
+| where failed_attempts>=5
