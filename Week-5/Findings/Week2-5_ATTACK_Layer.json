@@ -1,0 +1,278 @@
+{
+  "name": "DG Interns Hub Weeks 2 to 5",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Techniques seen in Weeks 2 to 5. Blue = Week 2, green = Week 3, orange = Week 4, purple = Week 5.",
+  "filters": {
+    "platforms": [
+      "Linux",
+      "macOS",
+      "Windows",
+      "Network",
+      "PRE",
+      "Containers",
+      "IaaS",
+      "SaaS",
+      "Office Suite",
+      "Identity Provider"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1110",
+      "color": "#6baed6",
+      "comment": "Week 2. Failed logons I generated on my Windows laptop. Log source: Windows Security log, Event ID 4625.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1136.001",
+      "color": "#6baed6",
+      "comment": "Week 2, Week 3 and Week 5. A dummy local user was created (net user). Log source: Security Event ID 4720 (Weeks 2 and 5) and Sysmon Event ID 1 (Weeks 3 and 5). In Week 5 I repeated it as a test and no alert fired.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1078",
+      "color": "#6baed6",
+      "comment": "Week 2 and Week 4. Successful logon, and the valid SSH password found after the brute force. Log source: Security Event ID 4624, Ubuntu auth.log in Splunk.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1543.003",
+      "color": "#6baed6",
+      "comment": "Week 2. A new Windows service was installed. Log source: System log, Event ID 7045.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1070.001",
+      "color": "#6baed6",
+      "comment": "Week 2. The Security log was cleared after a backup copy was saved. Log source: Security Event ID 1102.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1059.001",
+      "color": "#74c476",
+      "comment": "Week 3 and Week 5. PowerShell was run on my laptop. Log source: Sysmon Event ID 1 (process create). In Week 5 I ran an encoded PowerShell test, Splunk showed 1 event and no alert fired.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1046",
+      "color": "#74c476",
+      "comment": "Week 3 and Week 4. Nmap SYN scan. Detection: my Snort rule 1000004 Nmap SYN Scan Detected, alert forwarded into Splunk in Week 4.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1053.005",
+      "color": "#9e9ac8",
+      "comment": "Week 5. A dummy scheduled task was created with schtasks on my laptop as a test and deleted after. Log source: Sysmon Event ID 1 (schtasks.exe), Splunk showed 1 event. Security Event ID 4698 was not logged because Windows auditing was off, and no alert fired.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1110.001",
+      "color": "#fd8d3c",
+      "comment": "Week 4. Hydra SSH password guessing from Kali against the Ubuntu VM. Log source: Ubuntu auth.log in Splunk (failed logins counted by source IP).",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1566.002",
+      "color": "#9e9ac8",
+      "comment": "Week 5. All 3 phishing samples used links to lookalike or unrelated domains. Evidence: email headers, urlscan.io, VirusTotal, AlienVault OTX.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1204.002",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in 2 public Any.Run reports, not in my own lab. The user had to open a malicious file. Source: Any.Run process tree.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1059.007",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. wscript.exe ran a JavaScript file from a zip. Source: Any.Run behaviour list.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1140",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. The script decoded a Base64 file. Source: Any.Run behaviour list.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1082",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. The script and PixelLite83.exe read system information. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1083",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. The script checked if a folder exists. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1565",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. The script saved data to a binary file. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1568",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. DNS query to a duckdns.org domain. Source: Any.Run Network Threats, Suricata rule.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1547.001",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. A file was created in the Startup folder and launched from a Registry key. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1548.002",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. UAC bypass by modifying the registry. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1497.003",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. Time based checks. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1012",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. Registry queries. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1614",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. Checked computer location settings. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1112",
+      "color": "#9e9ac8",
+      "comment": "Week 5. Seen in a public Any.Run report, not in my own lab. Registry modification. Source: Any.Run.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ff6666ff",
+      "#ffe766ff",
+      "#8ec843ff"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    {
+      "label": "Week 2",
+      "color": "#6baed6"
+    },
+    {
+      "label": "Week 3",
+      "color": "#74c476"
+    },
+    {
+      "label": "Week 4",
+      "color": "#fd8d3c"
+    },
+    {
+      "label": "Week 5",
+      "color": "#9e9ac8"
+    }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
+}
